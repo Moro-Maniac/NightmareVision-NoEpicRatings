@@ -100,6 +100,7 @@ class ClientPrefs {
 	];
 
 	public static var comboOffset:Array<Int> = [0, 0, 0, 0];
+	public static var useEpics:Bool = true;
 	public static var ratingOffset:Int = 0;
 	public static var epicWindow:Int = 22;
 	public static var sickWindow:Int = 45;
@@ -198,6 +199,7 @@ class ClientPrefs {
 		FlxG.save.data.achievementsMap = Achievements.achievementsMap;
 		FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;
 
+		FlxG.save.data.useEpics = useEpics;
 		FlxG.save.data.ratingOffset = ratingOffset;
 		FlxG.save.data.epicWindow = epicWindow;
 		FlxG.save.data.sickWindow = sickWindow;
@@ -348,6 +350,9 @@ class ClientPrefs {
 			comboOffset = FlxG.save.data.comboOffset;
 		}
 
+		if(FlxG.save.data.useEpics != null) {
+			useEpics = FlxG.save.data.useEpics;
+		}
 		if(FlxG.save.data.ratingOffset != null) {
 			ratingOffset = FlxG.save.data.ratingOffset;
 		}
